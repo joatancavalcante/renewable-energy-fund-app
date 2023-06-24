@@ -1,9 +1,10 @@
 import { styled } from "styled-components/native";
 
-export const Container = styled.View`
+export const Container = styled.ScrollView`
     display: flex;
     flex: 1;
-    align-items: center;
+    height: 100%;
+    
     flex-direction: column;
     background-color: ${props => props.theme.colors.defaultBackground};
 `;
@@ -69,7 +70,7 @@ export const FundsContainer = styled.View`
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 16px 20px;
+    padding: 16px 0px 16px 20px;
     gap: 8px;
 `;
 
@@ -80,6 +81,42 @@ export const FundsContainerTitle = styled.Text`
     margin-bottom: 12px;
 `;
 
-export const FundsContainerContent = styled.View`
+export const BannerContent = styled.View`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 125px;
+    width: 354px;
+    border-radius: 10px;
+    background-color: ${props => props.theme.colors.purple500};
+    padding: 22px;    
+`;
 
+export const TextBannerContainer = styled.View`
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    width: 190px;
+    gap: 12px
+`
+
+export const TitleBanner = styled.Text`
+    font-family: ${props => props.theme.fonts.semiBold};
+    font-size: 20px;
+    color: ${props => props.theme.colors.defaultBackground};
+`
+
+export const SubtitleBanner = styled.Text`
+    font-family: ${props => props.theme.fonts.regular};
+    font-size: 16px;
+    color: ${props => props.theme.colors.defaultBackground};
+`
+
+export const InvestmentReasonsContent = styled.View`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 190px;
+    gap: 12px;
+    margin-vertical: 18px;
 `;

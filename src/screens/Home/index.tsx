@@ -1,4 +1,5 @@
 import { FundCard } from "../../components/FundCard";
+import { fundData } from "../../utils/mockData";
 import { 
     ButtonEarnRewards, 
     Container, 
@@ -10,37 +11,22 @@ import {
     PortfolioContainerValues,
     TextButtonEarnRewards, 
     FundsContainer,
-    FundsContainerTitle} from "./styles";
-import { FlatList } from "react-native";    
-import WindFundImg from '../../assets/wind-fund.png';
-import SolarFundImg from '../../assets/solar-fund.png';
-import NaturalFundImg from '../../assets/natural-fund.png';
+    FundsContainerTitle,
+    BannerContent,
+    TextBannerContainer,
+    TitleBanner,
+    SubtitleBanner,
+    InvestmentReasonsContent} from "./styles";
+import { FlatList, Image, View } from "react-native";  
+import BannerImg from '../../assets/banner-image.png';  
+import { InvestmentReasonsBanner } from "../../components/ReasonInvestmentBanner";
 
 export function Home(){
 
-    const dataFunds = [
-        {
-            name: "Wind Fund",
-            icon: WindFundImg,
-            value: "$1032.23",
-            percentage: 3.51
-        },
-        {
-            name: "Solar Fund",
-            icon: SolarFundImg,
-            value: "$986.61",
-            percentage: -0.13
-        },
-        {
-            name: "Natural Fund",
-            icon: NaturalFundImg,
-            value: "$1122.56",
-            percentage: 3.99
-        },
-    ]
+    const dataFunds = fundData;
 
     return (
-        <Container>
+        <Container contentContainerStyle={{alignItems: 'center'}}>
             <PortfolioContainer>
                 <PortfolioContainerTitle>
                     Portfolio
@@ -75,9 +61,19 @@ export function Home(){
                     )}
                     horizontal
                     showsHorizontalScrollIndicator={false}
-                    //contentContainerStyle={styles.companieList}
                 />   
             </FundsContainer>
+            <BannerContent>
+                <TextBannerContainer>
+                    <TitleBanner>Learn more about carbon credits</TitleBanner>
+                    <SubtitleBanner>Check out our top tips!</SubtitleBanner>
+                </TextBannerContainer>
+                <Image source={BannerImg} style={{width: 94, height: 87}}/>
+            </BannerContent>
+            <InvestmentReasonsContent>
+                <InvestmentReasonsBanner />
+                <InvestmentReasonsBanner />
+            </InvestmentReasonsContent>
         </Container>
     )
 }
