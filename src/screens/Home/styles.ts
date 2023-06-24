@@ -77,6 +77,7 @@ export const FundsContainerTitle = styled.Text`
     font-family: ${props => props.theme.fonts.semiBold};
     font-size: 20px;
     color: black;
+    margin-bottom: 12px;
 `;
 
 export const FundsContainerContent = styled.View`

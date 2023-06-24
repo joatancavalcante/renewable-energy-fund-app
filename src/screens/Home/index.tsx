@@ -1,3 +1,4 @@
+import { FundCard } from "../../components/FundCard";
 import { 
     ButtonEarnRewards, 
     Container, 
@@ -10,9 +11,34 @@ import {
     TextButtonEarnRewards, 
     FundsContainer,
     FundsContainerTitle} from "./styles";
-import { Text } from "react-native";    
+import { FlatList } from "react-native";    
+import WindFundImg from '../../assets/wind-fund.png';
+import SolarFundImg from '../../assets/solar-fund.png';
+import NaturalFundImg from '../../assets/natural-fund.png';
 
 export function Home(){
+
+    const dataFunds = [
+        {
+            name: "Wind Fund",
+            icon: WindFundImg,
+            value: "$1032.23",
+            percentage: 3.51
+        },
+        {
+            name: "Solar Fund",
+            icon: SolarFundImg,
+            value: "$986.61",
+            percentage: -0.13
+        },
+        {
+            name: "Natural Fund",
+            icon: NaturalFundImg,
+            value: "$1122.56",
+            percentage: 3.99
+        },
+    ]
+
     return (
         <Container>
             <PortfolioContainer>
@@ -39,6 +65,18 @@ export function Home(){
                 <FundsContainerTitle>
                     Funds
                 </FundsContainerTitle>
+                <FlatList 
+                    data={dataFunds}
+                    keyExtractor={(item) => String(item.name)}
+                    renderItem={({ item }) => (
+                        <FundCard 
+                            data={item}                  
+                        />
+                    )}
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                    //contentContainerStyle={styles.companieList}
+                />   
             </FundsContainer>
         </Container>
     )

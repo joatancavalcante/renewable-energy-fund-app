@@ -8,6 +8,7 @@ export const theme = {
         purple100: '#F7EFFF',
         green: '#0FDF8F',
         red: '#EE8688',
+        cardBorder: '#E6E6E6'
     },
     fonts: {
         regular: 'Sora_400Regular',
