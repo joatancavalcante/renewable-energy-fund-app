@@ -1,5 +1,4 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { useNavigation } from '@react-navigation/native';
 import { BackButton } from '../components/BackButton';
 import { Home } from '../screens/Home';
 import { Trade } from '../screens/Trade';
@@ -7,22 +6,23 @@ import { Portfolio } from '../screens/Portfolio';
 import { UserButton } from '../components/UserButton';
 import { BellButton } from '../components/BellButton';
 import { Entypo, MaterialCommunityIcons, SimpleLineIcons } from '@expo/vector-icons';
+import { theme } from '../styles/theme';
 
 
 const Tab = createBottomTabNavigator();
 
 export function AppRoutes() {
 
-  const navigation = useNavigation();
-
   return (
     <Tab.Navigator screenOptions={
       { 
         headerShown: true, 
-        tabBarActiveTintColor: '#770FDF', 
+        tabBarActiveTintColor: theme.colors.purple500, 
         tabBarInactiveTintColor: 'black',
         tabBarStyle: {height: 100},
-        tabBarLabelStyle: {fontSize: 12}
+        headerStyle: {height: 124},
+        headerTitleStyle: {fontFamily: 'Sora_600SemiBold', fontSize: 16},
+        tabBarLabelStyle: {fontFamily: 'Sora_400Regular', fontSize: 12}
       }
     }>
       <Tab.Screen 
