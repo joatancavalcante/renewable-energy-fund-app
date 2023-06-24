@@ -21,7 +21,7 @@ export const SignupMessage = styled.Text`
     font-family: ${props => props.theme.fonts.regular};
 `;
 
-export const ClickableSignupMessage = styled.Text`
+export const ClickableSigninMessage = styled.Text`
     color: ${props => props.theme.colors.grayText};
     font-size: 12px;
     font-family: ${props => props.theme.fonts.regular};

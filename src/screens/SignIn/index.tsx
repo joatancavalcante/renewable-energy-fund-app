@@ -1,4 +1,4 @@
-import { Container, Title, SignupMessage, ClickableSignupMessage } from "./styles";
+import { Container, Title, SignupMessage, ClickableSigninMessage } from "./styles";
 import { TextInputWithLabel } from "../../components/TextInputWithLabel";
 import { PrimaryButton } from "../../components/PrimaryButton";
 import {useNavigation} from '@react-navigation/native';
@@ -20,7 +20,7 @@ export function SignIn(){
             <TextInputWithLabel label="Password" placeholder="Minumum 8 characters" />
             <PrimaryButton text="Login" />
             <SignupMessage>
-                Don't have an account? <ClickableSignupMessage onPress={handleSignup}>Sign up</ClickableSignupMessage> here
+                Don't have an account? <ClickableSigninMessage onPress={handleSignup}>Sign up</ClickableSigninMessage> here
             </SignupMessage>
         </Container>
     )

@@ -7,7 +7,13 @@ import {useNavigation} from '@react-navigation/native';
 
 export function SignUp(){
 
+    const navigation = useNavigation();
+
     const [boxChecked, setBoxChecked] = useState(false);
+
+    function handleBackToSignin(){
+        navigation.goBack();     
+    }
 
     return (
         <Container>
@@ -29,7 +35,7 @@ export function SignUp(){
 
             <PrimaryButton text="Create Account" />
             <SignupMessage>
-                Already have an account? <ClickableSignupMessage>Log in Here</ClickableSignupMessage> here
+                Already have an account? <ClickableSignupMessage onPress={handleBackToSignin}>Log in Here</ClickableSignupMessage> here
             </SignupMessage>
         </Container>
     )

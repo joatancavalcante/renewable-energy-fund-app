@@ -1,4 +1,3 @@
-import { TouchableOpacity } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { useNavigation } from '@react-navigation/native';
 import { SignIn } from '../screens/SignIn';
