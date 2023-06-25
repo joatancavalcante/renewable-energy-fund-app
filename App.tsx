@@ -1,5 +1,7 @@
 import 'react-native-gesture-handler';
 
+import { Provider } from 'react-redux';
+import { store } from './src/redux/store';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, ActivityIndicator } from 'react-native';
 import { ThemeProvider } from 'styled-components';
@@ -13,10 +15,12 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <View style={styles.container}>
-        {fontsLoaded ? <Routes /> : <ActivityIndicator />}
-        <StatusBar style="auto" />
-      </View>
+      <Provider store={store}>
+        <View style={styles.container}>
+          {fontsLoaded ? <Routes /> : <ActivityIndicator />}
+          <StatusBar style="auto" />
+        </View>
+      </Provider>
     </ThemeProvider>
   );
 }

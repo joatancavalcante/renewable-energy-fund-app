@@ -1,12 +1,13 @@
 import { Container, TextButton } from "./styles";
+import { TouchableOpacityProps } from 'react-native'
 
-interface PrimaryButtonProps {
+interface PrimaryButtonProps extends TouchableOpacityProps {
     text: string;
 }
 
-export function PrimaryButton({ text  }: PrimaryButtonProps){
+export function PrimaryButton({ text, ...rest  }: PrimaryButtonProps){
     return (
-        <Container>
+        <Container {...rest}>
             <TextButton>
                 {text}
             </TextButton>

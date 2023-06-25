@@ -1,10 +1,14 @@
 import { AntDesign } from '@expo/vector-icons';
 import { Container } from './styles';
+import { useDispatch } from 'react-redux';
+import { logoutAction } from '../../redux/actions/authAction';
 
 export function UserButton(){
 
+    const dispatch = useDispatch();
+
     function handleLogout(){
-        console.log('logout')
+        dispatch(logoutAction());
     }
 
     return (

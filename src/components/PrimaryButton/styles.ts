@@ -1,6 +1,6 @@
 import { styled } from 'styled-components/native';
 
-export const Container = styled.TouchableOpacity`
+export const Container = styled.Pressable`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,6 +11,7 @@ export const Container = styled.TouchableOpacity`
     background-color: ${props => props.theme.colors.purple500};
     margin-top: 28px;
     margin-bottom: 12px;
+    opacity: ${props => props.disabled ? 0.6 : 1};
 `;
 
 export const TextButton = styled.Text`
