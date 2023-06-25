@@ -45,15 +45,16 @@ export function AppRoutes() {
       <Tab.Screen 
         name="Trade"
         component={Trade}
-        options={{          
+        options={({ route }) => ({          
           headerShown: true,
+          headerTitle: route.params?.headerTitleParam,
           headerLeft: () => (
             <BackButton />
           ),
           tabBarIcon: ({color}) => (
             <MaterialCommunityIcons name="arrow-left-right" size={32} color={color} />
           )
-        }}
+        })}
       />
 
       <Tab.Screen 

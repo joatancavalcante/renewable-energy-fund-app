@@ -45,7 +45,7 @@ export function SignIn(){
                 onChangeText={newText => setPassword(newText)}
                 value={password}
             />
-            <PrimaryButton disabled={false} text="Login" onPress={handleSignin}/>
+            <PrimaryButton disabled={(username == '') || (password == '')} text="Login" onPress={handleSignin}/>
             <SignupMessage>
                 Don't have an account? <ClickableSigninMessage onPress={handleSignup}>Sign up</ClickableSigninMessage> here
             </SignupMessage>
