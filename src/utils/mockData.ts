@@ -144,7 +144,7 @@ export const chartDataPerPeriod = [
         ]
     },
     {
-        period: 'All',
+        period: 'all',
         data: [
             { x: -2, y: 2 },
             { x: -1, y: 10 },
@@ -161,4 +161,31 @@ export const chartDataPerPeriod = [
             { x: 10, y: 18 },
         ]
     },
+]
+
+export const infoAndStatusData = [
+    {
+        key: "AUM",
+        value: '$430.88m'
+    },
+    {
+        key: "Vintage Range",
+        value: '2019 – 2022'
+    },
+    {
+        key: "Price at Close",
+        value: '$17.68'
+    },
+    {
+        key: "Issue Date",
+        value: '18/04/2022'
+    },
+    {
+        key: "TER",
+        value: '0.15%'
+    },
+    {
+        key: "Price at Open",
+        value: '$17.74'
+    }
 ]

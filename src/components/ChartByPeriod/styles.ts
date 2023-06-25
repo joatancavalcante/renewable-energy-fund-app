@@ -11,7 +11,7 @@ export const SelectPeriodContainer = styled.View`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 16px 8px;
+    margin: 16px 24px;
 `;
 
 interface SelectPeriodButtonProps {
@@ -19,7 +19,7 @@ interface SelectPeriodButtonProps {
 }
 
 export const SelectPeriodButton = styled.TouchableOpacity<SelectPeriodButtonProps>`
-    padding: 12px 16px;
+    padding: 12px 12px;
     margin: 0 8px;
     border-radius: 4px;
     background-color: ${props => props.selected ? props.theme.colors.purple100 : props.theme.colors.defaultBackground };
