@@ -8,6 +8,7 @@ import { ThemeProvider } from 'styled-components';
 import { theme } from './src/styles/theme';
 import { useFonts, Sora_400Regular, Sora_600SemiBold } from '@expo-google-fonts/sora';
 import { Routes } from './src/routes';
+import Toast from 'react-native-toast-message';
 
 export default function App() {
 
@@ -19,6 +20,7 @@ export default function App() {
         <View style={styles.container}>
           {fontsLoaded ? <Routes /> : <ActivityIndicator />}
           <StatusBar style="auto" />
+          <Toast />
         </View>
       </Provider>
     </ThemeProvider>

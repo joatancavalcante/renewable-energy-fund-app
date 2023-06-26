@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Toast from 'react-native-toast-message';
 import { Container, Title, SignupMessage, ClickableSignupMessage, CheckboxContainer } from "./styles";
 import { TextInputWithLabel } from "../../components/TextInputWithLabel";
 import { PrimaryButton } from "../../components/PrimaryButton";
@@ -11,6 +12,15 @@ export function SignUp(){
     const navigation = useNavigation();
 
     const [boxChecked, setBoxChecked] = useState(false);
+
+    function succesSignUp(){
+        Toast.show({
+            type: 'success',
+            text1: 'Welcome!',
+            text2: 'Now you are ready!'
+        });
+        handleBackToSignin();
+    }
 
     function handleBackToSignin(){
         navigation.goBack();     
@@ -41,7 +51,7 @@ export function SignUp(){
                     </SignupMessage>
                 </CheckboxContainer>
 
-                <PrimaryButton disabled={!boxChecked} onPress={handleBackToSignin} text="Create Account" />
+                <PrimaryButton disabled={!boxChecked} onPress={succesSignUp} text="Create Account" />
                 <SignupMessage>
                     Already have an account? <ClickableSignupMessage onPress={handleBackToSignin}>Log in Here</ClickableSignupMessage> here
                 </SignupMessage>

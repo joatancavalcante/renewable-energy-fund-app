@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import { ChartByPeriod } from "../../components/ChartByPeriod";
 import { InfoAndStatus } from "../../components/InfoAndStatus";
 import { infoAndStatusData } from "../../utils/mockData";
@@ -17,8 +18,21 @@ import { Container,
     BottomButton,
     TextSellButton,
     TextRetireCreditsButton} from "./styles";
+import Toast from 'react-native-toast-message';    
 
 export function Trade(){
+
+    const navigation = useNavigation();
+
+    function handleSell(){
+        Toast.show({
+            type: 'success',
+            text1: 'Uhuuu!',
+            text2: 'Congratulations for your sell!'
+        });        
+        navigation.goBack();        
+    }
+
     return (
         <Container contentContainerStyle={{alignItems: 'center'}}>
             <TradeHeaderContainer>
@@ -50,7 +64,7 @@ export function Trade(){
                     </YourPortfolioValueAndLastPurchaseContainer>
                 </YourPortfolioHeaderInfoContainer>
                 <BottomButtonsContainer>
-                    <BottomButton callToAction={false}>
+                    <BottomButton onPress={handleSell} callToAction={false}>
                         <TextSellButton>Sell</TextSellButton>
                     </BottomButton>
                     <BottomButton callToAction={true}>
