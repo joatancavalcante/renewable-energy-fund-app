@@ -7,4 +7,5 @@ This is a react native project that uses:
 - Styled-components
 - Typescript
 
-![RPReplay_Final1687781206](https://github.com/joatancavalcante/renewable-energy-fund-app/assets/7294833/5844f161-a627-4614-a6bf-b3ea931bcdc2)
+![app-video](https://github.com/joatancavalcante/renewable-energy-fund-app/assets/7294833/14e0a854-fae1-4e1a-8e0b-c4aabefed77a)
+
