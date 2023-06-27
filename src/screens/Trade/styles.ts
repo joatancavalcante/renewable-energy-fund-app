@@ -117,3 +117,35 @@ export const TextRetireCreditsButton = styled.Text`
     font-size: 18px;
     color: ${props => props.theme.colors.defaultBackground};    
 `;
+
+export const BottomMessage = styled.Text`
+    font-family: ${props => props.theme.fonts.regular};
+    font-size: 13px;
+    color: ${props => props.theme.colors.grayText};  
+`;
+
+export const BottomInfo = styled.Text`
+    font-family: ${props => props.theme.fonts.regular};
+    font-size: 14px;
+    color: ${props => props.theme.colors.grayText};
+    background-color: ${props => props.theme.colors.gray};
+    margin-vertical: 28px;  
+    padding: 8px;
+`;
+
+export const BuyButton = styled.TouchableOpacity`
+    display: flex;
+    border: none;
+    width: 100%;
+    height: 64px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    background-color: ${props => props.theme.colors.purple500};
+`;
+
+export const TextBuyButton = styled.Text`
+    font-family: ${props => props.theme.fonts.semiBold};
+    font-size: 22px;
+    color: ${props => props.theme.colors.defaultBackground};    
+`;

@@ -17,18 +17,22 @@ import { Container,
     BottomButtonsContainer,
     BottomButton,
     TextSellButton,
-    TextRetireCreditsButton} from "./styles";
+    TextRetireCreditsButton,
+    BottomMessage,
+    BottomInfo,
+    BuyButton,
+    TextBuyButton} from "./styles";
 import Toast from 'react-native-toast-message';    
 
 export function Trade(){
 
     const navigation = useNavigation();
 
-    function handleSell(){
+    function handleButton(message: string){
         Toast.show({
             type: 'success',
             text1: 'Uhuuu!',
-            text2: 'Congratulations for your sell!'
+            text2: message
         });        
         navigation.goBack();        
     }
@@ -64,13 +68,25 @@ export function Trade(){
                     </YourPortfolioValueAndLastPurchaseContainer>
                 </YourPortfolioHeaderInfoContainer>
                 <BottomButtonsContainer>
-                    <BottomButton onPress={handleSell} callToAction={false}>
+                    <BottomButton onPress={() => handleButton('Congratulations for your sell')} callToAction={false}>
                         <TextSellButton>Sell</TextSellButton>
                     </BottomButton>
                     <BottomButton callToAction={true}>
                         <TextRetireCreditsButton>Retire Credits</TextRetireCreditsButton>
                     </BottomButton>
                 </BottomButtonsContainer>
+                <BottomMessage>
+                    You’ve previously retired 28 credits of this asset
+                </BottomMessage>
+                <BottomInfo>
+                    Please note that prices are for reference only and may vary at the time of excecuting a buy or sell order. {'\n'} 
+                    The information provided is not investment advice, and should not be used as a recommendation to buy or sell assets.
+                </BottomInfo>
+                <BuyButton onPress={() => handleButton('Congratulations for your buy')}>
+                    <TextBuyButton>
+                        Buy
+                    </TextBuyButton>
+                </BuyButton>
             </YourPortfolioContainer>            
         </Container>
     )
